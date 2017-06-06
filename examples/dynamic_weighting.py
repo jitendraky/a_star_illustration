@@ -5,6 +5,7 @@ from .utils import build_graph, g, euclid
 
 from functools import partial
 
+
 def successors(x, y):
     ss = [Node(x + 1, y), Node(x - 1, y),
           Node(x, y + 1), Node(x, y - 1)]
