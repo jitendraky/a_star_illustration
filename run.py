@@ -1,10 +1,10 @@
-from examples import classic_8_neighbors, classic_4_neighbors, dijkstra, \
+from examples import classic_8_neighbors, taxicab, dijkstra, \
     dynamic_weighting, alpha
 
 
 def main():
     classic_8_neighbors()
-    classic_4_neighbors()
+    taxicab()
     dijkstra()
     dynamic_weighting()
     alpha()

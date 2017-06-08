@@ -2,7 +2,7 @@
 ---
 ## In taxicab space
 [[Info](https://en.wikipedia.org/wiki/Taxicab_geometry)]
-<p align="center"><img src="./illustrations/classic_4_neighbors.gif"></p>
+<p align="center"><img src="./illustrations/taxicab.gif"></p>
 
 ---
 ## As dijkstra

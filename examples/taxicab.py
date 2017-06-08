@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from a_star import Node, a_star
-from .utils import build_graph, g
+from .utils import build_graph
 
 
 def successors(x, y):
@@ -9,12 +9,18 @@ def successors(x, y):
     yield from ss
 
 
-def h(node1, node2, e=1):
+def g(node):
+    node1 = node
+    node2 = list(node.path)[-1]
+    return abs(node1.x - node2.x) + abs(node1.y - node2.y)
+
+
+def h(node1, node2):
     """If node has 4 neighbors"""
-    return e * (abs(node1.x - node2.x) + abs(node1.y - node2.y))
+    return abs(node1.x - node2.x) + abs(node1.y - node2.y)
 
 
-def classic_4_neighbors():
+def taxicab():
     side = 10
     walls = (
         Node(2, 3), Node(3, 3), Node(4, 3), Node(5, 3), Node(6, 3), Node(7, 3),
@@ -25,5 +31,5 @@ def classic_4_neighbors():
     start = Node(0, 9)
     stop = Node(9, 0)
     graph = build_graph(side, successors, *walls)
-    filename = 'illustrations/classic_4_neighbors.gif'
+    filename = 'illustrations/taxicab.gif'
     a_star(start, stop, graph, g, h, filename=filename)
